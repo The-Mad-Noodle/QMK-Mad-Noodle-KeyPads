@@ -1,4 +1,4 @@
-# QMK-Mad-Noodle-KeyPads
+# QMK Mad Noodle KeyPads
 The updated repository for all of the Mad Noodle Keypads QMK source files and Documentation
 
 ![Mad Noodle Keypads](https://static.wixstatic.com/media/59d0ff_93217686786e482a95893e8f7949bd16~mv2.png)
@@ -38,7 +38,8 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 
 ## Flashing Keypads with ATMEGA32U4 Chip
-> [!NOTE] This only applies to keypads made _BEFORE_ 2024.
+> [!NOTE]
+> This only applies to keypads made _BEFORE_ 2024.
 > - NCC1701KB v2
 > - Noodlepad v1 & v2
 > - Udon:13
