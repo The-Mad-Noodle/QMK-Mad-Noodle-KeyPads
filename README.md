@@ -25,12 +25,14 @@ Welcome to the official repository for QMK firmware source files and comprehensi
 1. Vist [QMK's Github](https://github.com/qmk/qmk_firmware) and clone or download current release
 <sup>Optional (If your local QMK is not up to date with the current release)
 2. Place or clone the `qmk_firmware` folder into the directory you plan on working out of.
-3. Copy the entire `/QMK-Mad-Noodle-KeyPads/themadnoodle` folder to `qmk_firmware/keyboards` directory of the QMK firmware folder you just downloaded
+3. Copy the entire `/QMK-Mad-Noodle-KeyPads/themadnoodle` folder to `qmk_firmware/keyboards` directory of the QMK firmware you just downloaded
 
 Then you're good to go! <br>
 Modify your keymaps to your desired layout and follow the instructions on https://docs.qmk.fm/ to compile your new firmware.
 
-Compile example (after setting up your build environment):
+> After setting up your [Build Environment](https://docs.qmk.fm/#/getting_started_build_tools?id=set-up-your-environment)
+
+Compile example:
 
     qmk compile -kb themadnoodle/noodlepad/v2 -km default
 
@@ -38,7 +40,7 @@ Flashing example:
 
     qmk flash -kb themadnoodle/noodlepad/v2 -km default
 
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+See the [Build Your Firmware](https://docs.qmk.fm/#/newbs_building_firmware?id=build-your-firmware) and the [Flashing Your Keyboard](https://docs.qmk.fm/#/newbs_flashing) guides for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
 <br>
 <br>
@@ -88,7 +90,7 @@ Congrats! Your keypad is now successfully flashed with your new firmware!
 
 1. Ensure your _Build Enviroment_ is setup correctly. 
     - See the [Prepare Your Build Environment](https://docs.qmk.fm/#/getting_started_build_tools?id=set-up-your-environment) section on docs.qmk.fm/
-2. In your console, type `qmk flash -kb themadnoodle/{Keyboard} -km {Keymap}`, I.E., `qmk flash -kb themadnoodle/noodlepad_micro -km default`
+2. In your console, type `qmk flash -kb themadnoodle/<keyboard> -km <Keymap>`, I.E., `qmk flash -kb themadnoodle/noodlepad_micro -km default`
 3. Wait for your firmware to compile. Then you'll be prompted with:
     >Flashing for bootloader: rp2040<br>
     >Waiting for drive to deploy...
@@ -97,5 +99,5 @@ Congrats! Your keypad is now successfully flashed with your new firmware!
 Congrats! Your keypad is now successfully flashed with your new firmware!
 <br>
 <br>
-
->If you are having issues, feel free to reach out via our contact form at https://www.themadnoodle.com/contact
+> [!TIP]
+> If you are having issues, feel free to reach out via our contact form at https://www.themadnoodle.com/contact
