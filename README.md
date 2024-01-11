@@ -9,7 +9,9 @@ The updated repository for all of the Mad Noodle Keypads QMK source files and Do
 
 
  **For FULL, detailed instructions on how to create, modify, and compile QMK firmware, Please visit https://docs.qmk.fm/**
+ <br>
 
+> **If you are looking for a much simpler option check out our [Mad Noodle Via](https://github.com/The-Mad-Noodle/Mad-Noodle-Via-Support) Github!**
 
 ## QMK Setup Instructions
 
@@ -84,5 +86,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
     >Waiting for drive to deploy...
 4. Double press the button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode and the flashing will begin. 
 5. Congrats! Your keypad is now successfully flashed with your new firmware!
+<br>
+<br>
 
 >If you are having issues, feel free to reach out via our contact form at https://www.themadnoodle.com/contact
