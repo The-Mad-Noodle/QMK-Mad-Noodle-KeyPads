@@ -1,5 +1,6 @@
 # QMK Mad Noodle KeyPads
 The updated repository for all of the Mad Noodle Keypads QMK source files and Documentation
+(_Last tested with QMK v0.23.5_)
 
 ![Mad Noodle Keypads](https://static.wixstatic.com/media/59d0ff_93217686786e482a95893e8f7949bd16~mv2.png)
 
@@ -20,8 +21,8 @@ The updated repository for all of the Mad Noodle Keypads QMK source files and Do
 
 
 
-1. Vist [QMK's Github](https://github.com/qmk/qmk_firmware) and clone download current release
-<sup>Optional (If your QMK is not up to date with the current release):
+1. Vist [QMK's Github](https://github.com/qmk/qmk_firmware) and clone or download current release
+<sup>Optional (If your QMK is not up to date with the current release)
 2. Place the entire `qmk_firmware` in the directory you plan on working out of
 3. Copy the entire `/QMK-Mad-Noodle-KeyPads/themadnoodle` folder to `qmk_firmware/keyboards` directory of the QMK firmware folder you just downloaded
 
