@@ -41,7 +41,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 <br>
 <br>
 
-# Flashing Firmware To Your Keypad
+# Flashing Firmware To Your Mad Noodle Keypad
 
 ## Flashing Keypads with ATMEGA32U4 Chip
 > [!NOTE]
