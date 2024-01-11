@@ -1,18 +1,17 @@
-# QMK Mad Noodle KeyPads
-The updated repository for all of the Mad Noodle Keypads QMK source files and Documentation
+# QMK Mad Noodle Keypads Repository
+
+Welcome to the official repository for QMK firmware source files and comprehensive documentation for all Mad Noodle Keypads. This repository contains the fully updated source `keyboard` folder for QMK firmware, compiled default firmware, and detailed documentation for each Mad Noodle Keypad model. Start by using the provided keymaps as a foundation to customize your own unique layout.
+<br>
+
 (_Last tested with QMK v0.23.5_)
 
 ![Mad Noodle Keypads](https://static.wixstatic.com/media/59d0ff_93217686786e482a95893e8f7949bd16~mv2.png)
 
 
- Fully updated Source `keyboard` folder for QMK firmware, Compiled Default Firmware, and Documentation for every Mad Noodle Keypad.  
- Use the included keymaps as a template to create your own!
-
-
  **For FULL, detailed instructions on how to create, modify, and compile QMK firmware, Please visit https://docs.qmk.fm/**
  <br>
 
-> **If you are looking for a much simpler option check out our [Mad Noodle Via](https://github.com/The-Mad-Noodle/Mad-Noodle-Via-Support) Github!**
+> **If you are looking for an option with a much simpler configuration experience, explore our [Mad Noodle Via](https://github.com/The-Mad-Noodle/Mad-Noodle-Via-Support) Github!**
 
 ## QMK Setup Instructions
 
@@ -22,8 +21,8 @@ The updated repository for all of the Mad Noodle Keypads QMK source files and Do
 
 
 1. Vist [QMK's Github](https://github.com/qmk/qmk_firmware) and clone or download current release
-<sup>Optional (If your QMK is not up to date with the current release)
-2. Place the entire `qmk_firmware` in the directory you plan on working out of
+<sup>Optional (If your local QMK is not up to date with the current release)
+2. Place or clone the `qmk_firmware` folder into the directory you plan on working out of.
 3. Copy the entire `/QMK-Mad-Noodle-KeyPads/themadnoodle` folder to `qmk_firmware/keyboards` directory of the QMK firmware folder you just downloaded
 
 Then you're good to go! <br>
@@ -56,9 +55,10 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 4. In your QMK Toolbox Consol, you should see `*** DFU device connected:` appear.
 5. Under `Local File` open your compliled HEX file.
 6. Ensure `Microcontroller` is set to atmega32u4.
-7. Click the `Flash` button to begin flashing your keypad with the selected HEX file.
-8. When the flashing is complete, your console should show an indication of a successful flash and the device disconnected.
-9. Congrats! Your keypad is now successfully flashed with your new Keymap! 
+7. Click the `Flash` button to begin flashing process.
+8. When the flashing is complete, your console should show an indication of a successful flash and the device will disconnect.
+
+Congrats! Your keypad is now successfully flashed with your new Keymap! 
 
 ## Flashing Keypads with RP2040 Chip
 > [!NOTE]
@@ -71,11 +71,12 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 #### If You Already Have A Compiled .u2f File:
 
 1. Connect the keypad to your computer via a USB-C Cable (not included).
-2. Double press the button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode.
-3. When in **Bootloader Mode**, on your computer a new drive is created called `RPI-RP2`
+2. Quickly double-press the reset button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode.
+3. When in **Bootloader Mode**, A drive named `RPI-RP2` will appear on your computer.
 4. Copy the compiled .u2f file (I.E. `themadnoodle_noodlepad_micro_default.uf2`) into `RPI-RP2` drive.
-5. Once finished copying, the drive will close, and your keypad will reset automatically.
-6. Congrats! Your keypad is now successfully flashed with your new firmware!
+5. Once finished copying, the drive will close, and your keypad will restart with the new firmware.
+
+Congrats! Your keypad is now successfully flashed with your new firmware!
 
 #### Flashing Your Keypad using QMK MSYS or Terminal
 
@@ -85,8 +86,9 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 3. Wait for your firmware to compile. Then you'll be prompted with:
     >Flashing for bootloader: rp2040<br>
     >Waiting for drive to deploy...
-4. Double press the button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode and the flashing will begin. 
-5. Congrats! Your keypad is now successfully flashed with your new firmware!
+4. Quickly double-press the reset button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode and the flashing will begin. 
+
+Congrats! Your keypad is now successfully flashed with your new firmware!
 <br>
 <br>
 
