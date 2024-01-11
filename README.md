@@ -10,9 +10,11 @@ Welcome to the official repository for QMK firmware source files and comprehensi
 
  **For FULL, detailed instructions on how to create, modify, and compile QMK firmware, Please visit https://docs.qmk.fm/**
  <br>
-
-> **If you are looking for an option with a much simpler configuration experience, explore our [Mad Noodle Via](https://github.com/The-Mad-Noodle/Mad-Noodle-Via-Support) Github!**
-
+ 
+> [!TIP]
+> If you are looking for an option with a much simpler configuration experience, explore our [Mad Noodle Via](https://github.com/The-Mad-Noodle/Mad-Noodle-Via-Support) Github!
+ <br>
+ 
 ## QMK Setup Instructions
 
 
