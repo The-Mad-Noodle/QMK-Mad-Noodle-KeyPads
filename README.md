@@ -90,7 +90,8 @@ Congrats! Your keypad is now successfully flashed with your new firmware!
 
 1. Ensure your _Build Enviroment_ is setup correctly. 
     - See the [Prepare Your Build Environment](https://docs.qmk.fm/#/getting_started_build_tools?id=set-up-your-environment) section on docs.qmk.fm/
-2. In your console, type `qmk flash -kb themadnoodle/<keyboard> -km <Keymap>`, I.E., `qmk flash -kb themadnoodle/noodlepad_micro -km default`
+2. In your console, type `qmk flash -kb themadnoodle/<keyboard> -km <Keymap>`
+    >  Example: `qmk flash -kb themadnoodle/noodlepad_micro -km default`
 3. Wait for your firmware to compile. Then you'll be prompted with:
     >Flashing for bootloader: rp2040<br>
     >Waiting for drive to deploy...
