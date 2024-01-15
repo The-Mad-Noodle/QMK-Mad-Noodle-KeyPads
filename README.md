@@ -46,7 +46,7 @@ See the [Build Your Firmware](https://docs.qmk.fm/#/newbs_building_firmware?id=b
 <br>
 
 # Flashing Firmware To Your Mad Noodle Keypad
-
+![Mad Noodle Keypads Buttons](https://static.wixstatic.com/media/59d0ff_fe5dde7e57db4453997a9c992eb7ae02~mv2.png)
 ## Flashing Keypads with ATMEGA32U4 Chip
 > [!NOTE]
 > **This only applies to keypads made _BEFORE_ 2024.**
