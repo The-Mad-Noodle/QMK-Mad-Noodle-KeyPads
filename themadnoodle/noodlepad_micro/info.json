@@ -13,6 +13,8 @@
         "mousekey": true,
         "nkro": true,
         "rgblight": true,
+        "rgblight_layers": true,
+        "rgblight_layer_blink": true,
         "encoder": true
     },
     "rgblight": {
