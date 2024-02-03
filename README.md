@@ -59,7 +59,7 @@ See the [Build Your Firmware](https://docs.qmk.fm/#/newbs_building_firmware?id=b
 
 1. Connect the keypad to your computer via a USB-C Cable (not included).
 2. Open QMK Toolbox software (If not already downloaded, please see https://qmk.fm/toolbox/).
-3. Press the `RESET` button located on the bottom of the keypad (Top left corner, to the left of the USB connector) labeled RST.
+3. Press the `RESET` button located on the bottom of the keypad (Top left corner, to the left of the USB connector) labeled RST (See image above).
 4. In your QMK Toolbox Consol, you should see `*** DFU device connected:` appear.
 5. Under `Local File` open your compliled HEX file.
 6. Ensure `Microcontroller` is set to atmega32u4.
@@ -79,7 +79,7 @@ Congrats! Your keypad is now successfully flashed with your new Keymap!
 #### If You Already Have A Compiled .u2f File:
 
 1. Connect the keypad to your computer via a USB-C Cable (not included).
-2. Quickly double-press the reset button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode.
+2. Quickly double-press the reset button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode (See image above).
 3. When in **Bootloader Mode**, A drive named `RPI-RP2` will appear on your computer.
 4. Copy the compiled .u2f file (I.E. `themadnoodle_noodlepad_micro_default.uf2`) into `RPI-RP2` drive.
 5. Once finished copying, the drive will close, and your keypad will restart with the new firmware.
