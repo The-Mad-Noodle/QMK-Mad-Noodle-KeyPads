@@ -4,101 +4,72 @@
 #include QMK_KEYBOARD_H
 
 enum custom_keycodes {
-    L_IND = QK_USER, // Toggle the Layer Indicators Modes
-    L_CYC               // Cycle through the layers
+#ifdef VIA_ENABLE // If you are using VIA, you can use the same keycodes as the default keymap
+    L_IND = QK_KB_0, // Toggle the Layer Indicators Modes
+    L_CYC            // Cycle through the layers
+#else // If you are not using VIA, you can use your own keycodes
+    L_IND = QK_USER,
+    L_CYC
+#endif
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-    /* LAYER 0
-     * ,--ENC2--       --ENC1--.
-     * |   <<  |       |  >>   |
-     * |-------+-------+-------|
-     * |  STOP |  PLAY | MEDIA |
-     * |-------+-------+-------|
-     * | CALC  | MAIL  | PC/FN |
-     * `-----------------------'
-     */
-
+/*Layer 0*/
     [0] = LAYOUT(
-      KC_MPRV,           KC_MNXT, 
-      KC_MSTP, KC_MPLY, KC_MSEL,
-      LT(2,KC_CALC), KC_MAIL, LT(1, KC_MYCM)
-      ),
+        KC_MUTE,
+        KC_MPLY, KC_MPRV, KC_MNXT, KC_MSEL, 
+        C(KC_Z), KC_CALC, KC_MAIL, KC_MYCM, 
+        C(KC_C), C(KC_X), C(KC_V), L_CYC
+        ),
 
-
-    /* LAYER 1
-     * ,--ENC2--       --ENC1--.
-     * | MODE+ |       | MODE- |  
-     * |-------+-------+-------|
-     * |Bright-|  Tog  |Bright+|
-     * |-------+-------+-------|
-     * | PLAIN |BREATH |       |
-     * `-----------------------'
-     */
-    
+/*Layer 1*/
     [1] = LAYOUT(
-      RGB_MOD,          RGB_RMOD, 
-      RGB_VAD, RGB_TOG, RGB_VAI, 
-      RGB_M_P, RGB_M_B, KC_TRNS
-      ),
+        RGB_TOG, 
+        RGB_SAD, RGB_SAI, RGB_HUD, RGB_HUI, 
+        RGB_MOD, RGB_RMOD, RGB_M_P, RGB_M_B, 
+        RGB_M_SW, RGB_SPD, RGB_SPI, L_CYC
+        ),
 
-      
-    /* LAYER 2 (ENCODER)
-     * ,--ENC2--       --ENC1--.
-     * |       |       |       |  
-     * |-------+-------+-------|
-     * |       |       |       |
-     * |-------+-------+-------|
-     * |       |       |       |
-     * `-----------------------'
-     */
-    
+/*Layer 2*/ 
     [2] = LAYOUT(
-      KC_TRNS,          KC_TRNS, 
-      KC_TRNS, KC_TRNS, KC_TRNS, 
-      KC_TRNS, KC_TRNS, KC_TRNS
-    ),
+        KC_NO, 
+        KC_NO, KC_NO, KC_NO, KC_NO, 
+        KC_NO, KC_NO, KC_NO, KC_NO, 
+        KC_NO, KC_NO, KC_NO, L_CYC
+        ),
 
-        /* LAYER 3 (ENCODER)
-     * ,--ENC2--       --ENC1--.
-     * |       |       |       |  
-     * |-------+-------+-------|
-     * |       |       |       |
-     * |-------+-------+-------|
-     * |       |       |       |
-     * `-----------------------'
-     */
-    
+/*Layer 3*/       
     [3] = LAYOUT(
-      KC_TRNS,          KC_TRNS, 
-      KC_TRNS, KC_TRNS, KC_TRNS, 
-      KC_TRNS, L_IND, KC_TRNS
-    )
+        KC_NO, 
+        TO(0), TO(1), TO(2), KC_NO, 
+        KC_NO, KC_NO, KC_NO, L_IND, 
+        LT(0,KC_PWR), LT(1, KC_SLEP), LT(2, KC_WAKE), L_CYC
+        ),
+
 };
 
-
 /*Encoder Mapping*/
-//-----------------------(ENC1)---------------------------------(ENC2)-----------------
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [0] =  { ENCODER_CCW_CW(KC_LEFT, KC_RGHT),      ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
-    [1] =  { ENCODER_CCW_CW(RGB_HUD, RGB_HUI),      ENCODER_CCW_CW(RGB_SAD, RGB_SAI)  },
-    [2] =  { ENCODER_CCW_CW(RGB_VAD, RGB_VAI),      ENCODER_CCW_CW(RGB_SPD, RGB_SPI)  },
-    [3] =  { ENCODER_CCW_CW(KC_LEFT, KC_RGHT),      ENCODER_CCW_CW(KC_DOWN, KC_UP)    }
+    [0] =  {ENCODER_CCW_CW(KC_VOLD,  KC_VOLU)},
+    [1] =  { ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
+    [2] =  { ENCODER_CCW_CW(KC_LEFT, KC_RGHT)},
+    [3] =  { ENCODER_CCW_CW(KC_DOWN,   KC_UP)},
+   
 };
 #endif
 
 /*Custom Keycodes*/
-const rgblight_segment_t PROGMEM layer_zero_all[]  = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_WHITE});
-const rgblight_segment_t PROGMEM layer_one_all[]   = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_RED});
-const rgblight_segment_t PROGMEM layer_two_all[]   = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_GREEN});
-const rgblight_segment_t PROGMEM layer_three_all[] = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_BLUE});
+const rgblight_segment_t PROGMEM layer_zero_all[]  = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_WHITE});
+const rgblight_segment_t PROGMEM layer_one_all[]   = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_RED});
+const rgblight_segment_t PROGMEM layer_two_all[]   = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_GREEN});
+const rgblight_segment_t PROGMEM layer_three_all[] = RGBLIGHT_LAYER_SEGMENTS({0, 6, HSV_BLUE});
 
 const rgblight_segment_t PROGMEM layer_zero[]  = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_WHITE});
 const rgblight_segment_t PROGMEM layer_one[]   = RGBLIGHT_LAYER_SEGMENTS({1, 1, HSV_WHITE});
-const rgblight_segment_t PROGMEM layer_two[]   = RGBLIGHT_LAYER_SEGMENTS({2, 1, HSV_WHITE});
-const rgblight_segment_t PROGMEM layer_three[] = RGBLIGHT_LAYER_SEGMENTS({3, 1, HSV_WHITE});
+const rgblight_segment_t PROGMEM layer_two[]   = RGBLIGHT_LAYER_SEGMENTS({3, 1, HSV_WHITE});
+const rgblight_segment_t PROGMEM layer_three[] = RGBLIGHT_LAYER_SEGMENTS({4, 1, HSV_WHITE});
 
 const rgblight_segment_t *const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 
@@ -119,9 +90,9 @@ void keyboard_post_init_user(void) {
 }
 
 #define LAYER_CYCLE_START 0 // 1st layer on the cycle
-#define LAYER_CYCLE_END 3 // Last layer on the cycle
+#define LAYER_CYCLE_END 3   // Last layer on the cycle
 
-bool led_mode; // false for Blinking Mode, true for Static Mode
+bool led_mode; // false for Blinking Mode, true for Static mode
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -164,9 +135,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     }
                 }
             } else {
+
             }
             return false; // Skip all further processing of this key
-
+        
         case L_CYC:
             // Our logic will happen on presses, nothing is done on releases
             if (!record->event.pressed) {
@@ -194,8 +166,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+
     if (led_mode) {
-        // Code for Static Layer Indicators
+        // Code for Static Layer Indicators 
 
         rgblight_set_layer_state(4, layer_state_cmp(state, 0));
         rgblight_set_layer_state(5, layer_state_cmp(state, 1));
@@ -204,8 +177,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
     } else {
         // Code for Blinking Layer Indicators
-
-        uint8_t layer = get_highest_layer(state);
+        
+         uint8_t layer = get_highest_layer(state);
 
         switch (layer) {
             case 0:
@@ -222,8 +195,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
                 break;
 
             default:
-                rgblight_blink_layer(0, 500);
+                rgblight_blink_layer(0, 500); 
         }
-    }
+            }
     return state;
 }

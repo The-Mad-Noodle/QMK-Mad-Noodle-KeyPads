@@ -46,7 +46,7 @@ See the [Build Your Firmware](https://docs.qmk.fm/#/newbs_building_firmware?id=b
 <br>
 
 # Flashing Firmware To Your Mad Noodle Keypad
-![Mad Noodle Keypads Buttons](https://static.wixstatic.com/media/59d0ff_fe5dde7e57db4453997a9c992eb7ae02~mv2.png)
+![Mad Noodle Keypads Buttons](https://static.wixstatic.com/media/59d0ff_262ab87b5e864e1995df2ad965f7e41c~mv2.png)
 ## Flashing Keypads with ATMEGA32U4 Chip
 > [!NOTE]
 > **This only applies to keypads made _BEFORE_ 2024.**
@@ -72,17 +72,22 @@ Congrats! Your keypad is now successfully flashed with your new Keymap!
 > [!NOTE]
 > **This only applies to keypads made _AFTER_ 2024.**
 > - NoodlePad[Micro]
+> - Udon:13 v.2
 <br>
 
 ### Flashing Keypads with RP2040 Chip, and Enabling "Bootloader Mode"
 
 #### If You Already Have A Compiled .u2f File:
 
-1. Connect the keypad to your computer via a USB-C Cable (not included).
-2. Quickly double-press the reset button on the back, center, left of the PCB labeled **"R"** to enter the bootloader drive mode (See image above).
-3. When in **Bootloader Mode**, A drive named `RPI-RP2` will appear on your computer.
-4. Copy the compiled .u2f file (I.E. `themadnoodle_noodlepad_micro_default.uf2`) into `RPI-RP2` drive.
-5. Once finished copying, the drive will close, and your keypad will restart with the new firmware.
+1. Put your Keypad into **Bootloader Mode**:
+    - ***NoodlePad[Micro]*** : Plug your USB-C Cable (not included) into your keypad. Once powered on, quickly double-press the reset button on the back, center, left of the PCB labeled **"R"** to enter **Bootloader Mode** (See image above).
+
+    - ***Udon:13 v.2*** : While holding down the boot button on the back, center of the PCB, labled **"BOOT"** (See image above), connect your USB-C Cable to your keypad, then release the boot button. Your keypad is now in **Bootloader Mode**. 
+
+
+2. When in **Bootloader Mode**, A drive named `RPI-RP2` will appear on your computer.
+3. Copy the compiled .u2f file (I.E. `themadnoodle_noodlepad_micro_default.uf2`) into `RPI-RP2` drive.
+4. Once finished copying, the drive will close, and your keypad will restart with the new firmware automatically.
 
 Congrats! Your keypad is now successfully flashed with your new firmware!
 

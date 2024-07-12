@@ -1,6 +1,6 @@
 {
     "manufacturer": "The Mad Noodle",
-    "keyboard_name": "NoodlePad Micro",
+    "keyboard_name": "Udon13 v2",
     "maintainer": "the-mad-noodle",
     "url": "https://www.madnoodleprototypes.com/",
     "bootloader": "rp2040",
@@ -13,12 +13,14 @@
         "mousekey": true,
         "nkro": true,
         "rgblight": true,
+        "oled": true,
+        "oled_driver_enable": true,
         "encoder": true,
         "unicode": true
     },
     "rgblight": {
         "hue_steps": 10,
-        "led_count": 4,
+        "led_count": 6,
         "sleep": true,
         "animations": {
             "breathing": true,
@@ -37,42 +39,44 @@
             "blink": true,
             "max": 8,
             "override_rgb": false
-    }
+        }
     },
     "matrix_pins": {
-        "cols": ["GP6", "GP7", "GP0"],
-        "rows": ["GP26", "GP27", "GP28"]
+        "cols": ["GP10", "GP11", "GP12", "GP13"],
+        "rows": ["GP28", "GP26", "GP15", "GP14"]
     },
     "processor": "RP2040",
     "usb": {
-        "device_version": "3.0.0",
-        "pid": "0x0004",
+        "device_version": "2.0.0",
+        "pid": "0x0013",
         "vid": "0x6A6C"
     },
+
     "layouts": {
         "LAYOUT": {
             "layout": [
-                {"matrix": [0, 2], "x": 2, "y": 0},
-                {"matrix": [0, 0], "x": 0, "y": 0},
-                {"matrix": [1, 2], "x": 2, "y": 1},
-                {"matrix": [1, 1], "x": 1, "y": 1},
-                {"matrix": [1, 0], "x": 0, "y": 1},
-                {"matrix": [2, 2], "x": 2, "y": 2},
-                {"matrix": [2, 1], "x": 1, "y": 2},
-                {"matrix": [2, 0], "x": 0, "y": 2}
+                { "label": "Encoder", "x": 3, "y": 0, "matrix": [0, 3] },
+                { "x": 0, "y": 1, "matrix": [1, 0] },
+                { "x": 1, "y": 1, "matrix": [1, 1] },
+                { "x": 2, "y": 1, "matrix": [1, 2] },
+                { "x": 3, "y": 1, "matrix": [1, 3] },
+                { "x": 0, "y": 2, "matrix": [2, 0] },
+                { "x": 1, "y": 2, "matrix": [2, 1] },
+                { "x": 2, "y": 2, "matrix": [2, 2] },
+                { "x": 3, "y": 2, "matrix": [2, 3] },
+                { "x": 0, "y": 3, "matrix": [3, 0] },
+                { "x": 1, "y": 3, "matrix": [3, 1] },
+                { "x": 2, "y": 3, "matrix": [3, 2] },
+                { "x": 3, "y": 3, "matrix": [3, 3] }
             ]
         }
     },
+    
     "ws2812": {
         "pin": "GP29",
         "driver": "vendor"
     },
     "encoder": {
-        "rotary": [
-            { "pin_a": "GP2", "pin_b": "GP1" }
-            { "pin_a": "GP3", "pin_b": "GP4" }
-        ]
-    
+        "rotary": [{ "pin_a": "GP1", "pin_b": "GP2" }]
     }
-
 }

@@ -8,7 +8,7 @@ enum custom_keycodes {
     L_IND = QK_KB_0, // Toggle the Layer Indicators Modes
     L_CYC            // Cycle through the layers
 #else // If you are not using VIA, you can use your own keycodes
-    L_IND = SAFE_RANGE,
+    L_IND = QK_USER,
     L_CYC
 #endif
 };
@@ -96,8 +96,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 };
 #    endif
 
-//  ======================Layer Light Setup==========================
-
+/*Custom Keycodes*/
 const rgblight_segment_t PROGMEM layer_zero_all[]  = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_WHITE});
 const rgblight_segment_t PROGMEM layer_one_all[]   = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_RED});
 const rgblight_segment_t PROGMEM layer_two_all[]   = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_GREEN});
@@ -126,15 +125,10 @@ void keyboard_post_init_user(void) {
     rgblight_layers = my_rgb_layers;
 }
 
+#define LAYER_CYCLE_START 0 // 1st layer on the cycle
+#define LAYER_CYCLE_END 3   // Last layer on the cycle
 
-//  ======================Custom Keycodes==========================
-
-// 1st layer on the cycle
-#    define LAYER_CYCLE_START 0
-// Last layer on the cycle
-#    define LAYER_CYCLE_END 3
-
-    bool led_mode; // false for Blinking Mode, true for Static mode
+bool led_mode; // false for Blinking Mode, true for Static mode
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -208,7 +202,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    
+
     if (led_mode) {
         // Code for Static Layer Indicators 
 
@@ -216,7 +210,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         rgblight_set_layer_state(5, layer_state_cmp(state, 1));
         rgblight_set_layer_state(6, layer_state_cmp(state, 2));
         rgblight_set_layer_state(7, layer_state_cmp(state, 3));
-        
 
     } else {
         // Code for Blinking Layer Indicators
@@ -240,10 +233,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             default:
                 rgblight_blink_layer(0, 500); 
         }
-
-  
-            
-            }        
+            }
     return state;
-
 }
